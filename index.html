@@ -1,0 +1,450 @@
+<html>
+    <head>
+        <title>Registation Form</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <section>
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <h1 class="navbar-brand" href="#">HINDUSTAN COLLEGE</h1>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      About Us
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </section>
+        <section id="banners">
+          <h1 class="text-center">Student Registation Form</h1>
+          <form class="register">
+            <div>
+              <label>Student Name</label>
+              <input type="text" id="studentname" minlength="5" maxlength="30" onkeyup="checkstudentname()"/><span id="nameerorr" style="color: red;"></span>
+            </div>
+            <div>
+              <label>Mother Name</label>
+              <input type="text" id="mothername" minlength="5" maxlength="30" onkeyup="checkmothername()"/><span id="mothernameerorr" style="color: red;"></span>
+            </div>
+            <div>
+              <label>Father Name</label>
+              <input type="text" id="fathername" minlength="5" maxlength="30" onkeyup="checkfathername()"/><span id="fathernameerorr" style="color: red;"></span>
+            </div>
+            <div>
+              <label>Address</label>
+              <textarea id="adress" minlength="10" maxlength="70" onkeyup="checkaddress()"></textarea><span id="addresserorr" style="color: red;"></span>
+            </div>
+            <div>
+              <label>Phone Number</label>
+              <input type="tel" id="phonenumber" oninput="this.value=this.value.replace(/[^0-9]/g, '');" onkeyup="checkphonenumber()"/><span id="phoneerorr" style="color: red;"></span>
+            </div>
+            <div>
+              <label>State Name</label>
+              <select id="statename" onchange="checkstate()">
+                <option value="">--Select Option--</option>
+                <option value="andhrapradesh">Andhra Pradesh</option>
+                <option value="arunachalpradesh">Arunachal Pradesh</option>
+                <option value="assam">Assam</option>
+                <option value="bihar">Bihar</option>
+                <option value="chhattishgarh">Chhattishgarh</option>
+                <option value="goa">Goa</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="haryana">Haryana</option>
+                <option value="himachalpradesh">Himachal Pradesh</option>
+                <option value="jharkhand">Jharkhand</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="kerala">Kerala</option>
+                <option value="madhyapradesh">Madhya Pradesh</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="manipur">Manipur</option>
+                <option value="meghalaya">Meghalaya</option>
+                <option value="mizoram">Mizoram</option>
+                <option value="nagaland">Nagaland</option>
+                <option value="odisha">Odisha</option>
+                <option value="punjab">Punjab</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="sikkim">Sikkim</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+                <option value="telangana">Telangana</option>
+                <option value="tripura">Tripura</option>
+                <option value="uttarpradesh">	Uttar Pradesh</option>
+                <option value="uttrakhand">Uttrakhand</option>
+                <option value="	westbengal">	West Bengal</option>
+              </select><span id="stateerorr" style="color: red;"></span>
+            </div> 
+            <div>
+              <label>Choose Degree of Engineering</label>
+              <select id="professional" onchange="destination()" onkeyup="checkprofessional()"><span id="professionalerorr" style="color: red;"></span>
+                <option value="">--------------Select Option-------------</option>
+                <option value="agricultural">Agricultural Engineering</option>
+                <option value="chemical">Chemical Engineering Degree</option>
+                <option value="mechanical">Mechanical Engineering Degree</option>
+                <option value="civil">Civil Engineering Degree</option>
+                <option value="geotechnical">Geotechnical Engineering Degree</option>
+                <option value="computer science">Computer Science Engineering Degree</option>
+                <option value="aeronautical">Aeronautical Engineering Degree</option>
+                <option value="biotech">Biotech Engineering Degree</option>
+                <option value="aerospace">Aerospace Engineering Degree</option>
+                <option value="architectural">Architectural Engineering Degree</option>
+                <option value="food">Food Engineering Degree</option>
+                <option value="nanotechnology">Nanotechnology Engineering Degree</option>
+                <option value="automotive">Automotive Engineering Degree</option>
+                <option value="structural">Structural Engineering Degree</option>
+                <option value="electrical">Electrical Engineering Degree</option>
+                <option value="electronics">Electronics Engineering Degree</option>
+                <option value="mechatronics">Mechatronics Engineering Degree</option>
+                <option value="robotics">Robotics Engineering Degree</option>
+              </select></br><span id="professionalerorr" style="color: red;"></span>
+            </div>
+            <div>
+              <img src="image/defalut.jpg" id="professionalimage" height="200px" width="200px"/>
+            </div>
+            <div class="text-center mt-3">
+              <input type="button" value="Submit" class="btn btn-primary" onclick="validation()"/>
+            </div> 
+          </form>     
+      </section>
+  </body>
+</html>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+  function checkstudentname(){
+    let studentname=document.getElementById("studentname").value.trim();
+    if(studentname.length>0){
+      if(studentname.length>=5){
+        document.getElementById("nameerorr").textContent=""
+      }
+      else{
+        document.getElementById("nameerorr").textContent="Please Enter Your Full Name"
+      }
+    }
+    else{
+        document.getElementById("nameerorr").textContent="Please Enter Your Name"
+      }
+  }
+  function checkmothername(){
+    let mothername=document.getElementById("mothername").value.trim();
+      if(mothername.length>0){
+      if(mothername.length>=5){
+        document.getElementById("mothernameerorr").textContent=""
+      }
+      else{
+        document.getElementById("mothernameerorr").textContent="Please Enter Your Mother Name Fully"
+      }
+
+    }
+    else{
+        document.getElementById("mothernameerorr").textContent="Please Enter Your Mother Name"
+      }
+  }
+  function checkfathername(){
+    let fathername=document.getElementById("fathername").value.trim();
+      if(fathername.length>0){
+      if(fathername.length>=5){
+        document.getElementById("fathernameerorr").textContent=""
+      }
+      else{
+        document.getElementById("fathernameerorr").textContent="Please Enter Your Father Name Fully"
+      }
+
+    }
+    else{
+        document.getElementById("fathernameerorr").textContent="Please Enter Your Father Name"
+      }
+  }
+  function checkaddress(){
+    let adress=document.getElementById("adress").value.trim();
+      if(adress.length>0){
+      if(adress.length>=10){
+         document.getElementById("addresserorr").textContent=""
+      }
+      else{
+        document.getElementById("addresserorr").textContent="Please Enter Your Address Fully"
+      }
+
+    }
+    else{
+        document.getElementById("addresserorr").textContent="Please Enter Your Address"
+      }
+  }
+  function checkphonenumber(){
+    let phonenumber=document.getElementById("phonenumber").value.trim();
+      let phonepattern=/^\d{10}$/;
+      if(phonenumber.length>0){
+      if(phonepattern.test(phonenumber)){
+        document.getElementById("phoneerorr").textContent=""
+      }
+      else {
+        document.getElementById("phoneerorr").textContent="Please Enter Your Validated Phonumber"
+      }
+      }
+    else{
+        document.getElementById("phoneerorr").textContent="Please Enter Your Phonenumber"
+      }
+  }
+  function checkprofessional(){
+    let professional=document.getElementById("professional").value;
+      if(professional){
+        document.getElementById("professionalerorr").textContent="";
+      }else{
+        document.getElementById("professionalerorr").textContent="Please Choose Degree of Engineering";
+      }
+
+      if(studentname && mothername && fathername && adress && phonenumber && statename && professional ){
+        alert("Succesfully Completed Form And Submit");
+      }
+  }
+  function checkstate(){
+    let statename=document.getElementById("statename").value;
+    if(statename=="andhrapradesh"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="arunachalpradesh"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="assam"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="bihar"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="chhattishgarh"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="goa"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="gujarat"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="haryana"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="himachalpradesh"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="jharkhand"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="karnataka"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="kerala"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="madhyapradesh"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="maharashtra"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="manipur"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="meghalaya"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="mizoram"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="nagaland"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="odisha"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="punjab"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="rajasthan"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="sikkim"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="tamilnadu"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="telangana"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="tripura"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="uttarpradesh"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="uttrakhand"){
+      document.getElementById("stateerorr").textContent="";
+    }else if(statename=="westbengal"){
+      document.getElementById("stateerorr").textContent="";
+    }
+    else{
+        document.getElementById("stateerorr").textContent="Please Choose Your State Name";
+      }
+  }
+  function destination(){
+    let professional = document.getElementById("professional").value;
+    if(professional=="agricultural"){
+      console.log("--agricultural---",document.getElementById("professional").value); 
+      document.getElementById("professionalimage").src="image/Ag.jpg";
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="chemical"){
+      document.getElementById("professionalimage").src="image/ChemicalEngineering.jpg";
+      console.log("--chemical---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="mechanical"){
+      document.getElementById("professionalimage").src="image/MechanicalEngineering.jpg";
+      console.log("--mechanical---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="civil"){
+      document.getElementById("professionalimage").src="image/CivilEngineering.jpg";
+      console.log("--civil---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="geotechnical"){
+      document.getElementById("professionalimage").src="image/GeotechnicalEngineering.jpg";
+      console.log("--geotechnical---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="computer science"){
+      document.getElementById("professionalimage").src="image/ComputerScience.jpg";
+      console.log("--computer science---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="aeronautical"){
+      document.getElementById("professionalimage").src="image/AeronauticalEngineering.jpg";
+      console.log("--aeronautical---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="biotech"){
+      document.getElementById("professionalimage").src="image/Biotech.jpg";
+      console.log("--biotech---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="aerospace"){
+      document.getElementById("professionalimage").src="image/AerospaceEngineering.jpg";
+      console.log("--aerospace---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="architectural"){
+      document.getElementById("professionalimage").src="image/ArchitecturalEngineering.jpg";
+      console.log("--architectural---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="food"){
+      document.getElementById("professionalimage").src="image/FoodEngineering.jpg";
+      console.log("--food---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="nanotechnology"){
+      document.getElementById("professionalimage").src="image/NanotechnologyEngineering.jpg";
+      console.log("--nanotechnology---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="automotive"){
+      document.getElementById("professionalimage").src="image/AutomotiveEngineering.jpg";
+      console.log("--automotive---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="structural"){
+      document.getElementById("professionalimage").src="image/StructuralEngineering.jpg";
+      console.log("--structural---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="electrical"){
+      document.getElementById("professionalimage").src="image/ElectricalEngineering.jpg";
+      console.log("--electrical---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="electronics"){
+      document.getElementById("professionalimage").src="image/ElectronicsEngineering.jpg";
+      console.log("--electronics---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="mechatronics"){
+      document.getElementById("professionalimage").src="image/MechatronicsEngineering.jpg";
+      console.log("--mechatronics---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }else if(professional=="robotics"){
+      document.getElementById("professionalimage").src="image/RoboticsEngineering.jpg";
+      console.log("--robotics---",document.getElementById("professional").value);
+      document.getElementById("professionalerorr").textContent="";
+    }
+    else{
+      console.log("----please select one option----");
+      document.getElementById("professionalimage").src="image/defalut.jpg";
+      document.getElementById("professionalerorr").textContent="Please Choose Degree of Engineering";
+    }
+  }
+  function validation(){
+    let studentname=document.getElementById("studentname").value.trim();
+    if(studentname.length>0){
+      if(studentname.length>=5){
+        document.getElementById("nameerorr").textContent=""
+      }
+      else{
+        document.getElementById("nameerorr").textContent="Please Enter Your Full Name"
+      }
+
+    }
+    else{
+        document.getElementById("nameerorr").textContent="Please Enter Your Name"
+      }
+    let mothername=document.getElementById("mothername").value.trim();
+      if(mothername.length>0){
+      if(mothername.length>=5){
+        document.getElementById("mothernameerorr").textContent=""
+      }
+      else{
+        document.getElementById("mothernameerorr").textContent="Please Enter Your Mother Name Fully"
+      }
+
+    }
+    else{
+        document.getElementById("mothernameerorr").textContent="Please Enter Your Mother Name"
+      }
+    let fathername=document.getElementById("fathername").value.trim();
+      if(fathername.length>0){
+      if(fathername.length>=5){
+        document.getElementById("fathernameerorr").textContent=""
+      }
+      else{
+        document.getElementById("fathernameerorr").textContent="Please Enter Your Father Name Fully"
+      }
+
+    }
+    else{
+        document.getElementById("fathernameerorr").textContent="Please Enter Your Father Name"
+      }
+    let adress=document.getElementById("adress").value.trim();
+      if(adress.length>0){
+      if(adress.length>=10){
+         document.getElementById("addresserorr").textContent=""
+      }
+      else{
+        document.getElementById("addresserorr").textContent="Please Enter Your Address Fully"
+      }
+    }
+    else{
+        document.getElementById("addresserorr").textContent="Please Enter Your Address"
+      }
+      let phonenumber=document.getElementById("phonenumber").value.trim();
+      let phonepattern=/^\d{10}$/;
+      if(phonenumber.length>0){
+      if(phonepattern.test(phonenumber)){
+        document.getElementById("phoneerorr").textContent=""
+      }
+      else {
+        document.getElementById("phoneerorr").textContent="Please Enter Your Validated Phonumber"
+      }
+      }
+    else{
+        document.getElementById("phoneerorr").textContent="Please Enter Your Phonenumber"
+      }
+      let statename=document.getElementById("statename").value;
+      if(statename){
+        document.getElementById("stateerorr").textContent="";
+      }
+    else{
+        document.getElementById("stateerorr").textContent="Please Choose Your State Name";
+      }
+      let professional=document.getElementById("professional").value;
+      if(professional){
+        document.getElementById("professionalerorr").textContent="";
+      }else{
+        document.getElementById("professionalerorr").textContent="Please Choose Degree of Engineering";
+      }
+      if(studentname && mothername && fathername && adress && phonenumber && statename && professional ){
+        alert("Succesfully Completed Form And Submit");
+      }    
+  }
+</script>
+
+
